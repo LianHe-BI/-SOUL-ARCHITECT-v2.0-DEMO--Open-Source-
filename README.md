@@ -1,4 +1,142 @@
  🌌 SOUL ARCHITECT v2.0 DEMO (Open Source)
+ 🌌 SOUL ARCHITECT v2.0
+Fine-tuning Core: Architect_v2_PRO | Architecture: NVIDIA Blackwell & Ada Lovelace Optimized
+🏛️ Philosophy
+SOUL ARCHITECT v2.0 is not a conventional text-extension plugin. It is a "Digital Architect" deeply reconstructed based on the hardware characteristics of the NVIDIA Blackwell architecture. It maintains a fundamental distinction from existing solutions in both aesthetic orientation and command precision:
+Beyond the "Literary Trap": Unlike mainstream local prompt generators (simple Llama/Gemma tunes) or LLMs (GPT-4, Claude), this model completely abandons ineffective emotional rhetoric. While others indulge in "expressive prose" that image models cannot parse, SOUL ARCHITECT focuses on Physical Parameter Reconstruction. It forcibly converts vague concepts into hardcore rendering instructions such as Subsurface Scattering or Anisotropic Filtering.
+Blackwell Computing Dividend: Achieving 100% localization and privacy, this model exploits the native BF16 Sparse Computing capabilities of the Blackwell architecture. It doesn't pursue "creative dialogue"; it pursues the most aggressive weight distribution for VAE/U-Net decoders, ensuring every prompt hits the "physical ceiling" of image texture.
+Aesthetic Snobbery: This is a "madman model" trained with high-intensity aesthetic bias (alpha=64, loss=0.47). It possesses a severe aesthetic elitism. If you attempt to describe "cluttered slums," "cheap plastics," or "mundane smoke," it will forcibly correct the input via fine-tuned weights or simply refuse output. It is designed for visual perfectionists, not for those seeking reading pleasure.
+DO NOT treat this as a chatbot.
+🕊️ Special Acknowledgments
+This project is researched and fine-tuned based on Alibaba's Qwen2.5-3B-Raw. Deep gratitude to the Alibaba team for providing an exceptional base model. Its powerful bilingual understanding and lightweight parameter scale made this extreme aesthetic experiment possible.
+🚀 Quick Start (Deployment)
+1. Prepare the Base
+Download the original [Qwen2.5-3B-Raw](https://huggingface.co/Qwen/Qwen2.5-3B?hl=zh-CN) model weights first.
+2. Environment Configuration
+The environment dependencies (~8GB) are complex. A pre-packaged Conda Virtual Environment is provided via cloud storage:https://pan.baidu.com/s/1EsBXxka4bNeUmRn6RmCTkw 
+Link: Baidu Network Disk (Code: 8888)
+MD5 Checksum: b8ae84b60ae7a5b1496efa27f46f67c4
+Package Name: arch20_runtime_env.tar.gz
+Installation (WSL2 / Linux):
+# Verify integrity
+md5sum arch20_runtime_env.tar.gz
+
+# Extract and Activate
+tar -xzvf arch20_runtime_env.tar.gz
+conda activate ./arch20_runtime
+3. Execution
+Modify the model paths in app.py:
+MODEL_PATH = "/your/path/Qwen2.5-3B-Raw"
+CORE_PATH = "./models/binary_cores/architect_v2.core"
+Launch the Engine:
+python app.py
+Access the interface via http://0.0.0.0:8888 once the terminal outputs the local IP.
+📂 Repository Structure
+app.py: Intelligent launcher with path adaptation and port detection.
+core/engine.py: Open-source inference logic. Core weights are BF16-hardened for zero-latency precision alignment on Blackwell Tensor Cores.
+models/binary_cores/: Fine-tuned .core weight files.
+tools/smelt_v2.py: Weight remelting utility.
+💻 Hardware Requirements
+To ensure inference speeds (target: 2-4s) and BF16 precision:
+GPU: NVIDIA Blackwell (RTX 50-series) preferred; Ada Lovelace (RTX 40-series) compatible. Note: AMD/Intel GPUs are not currently supported.
+VRAM: 8GB+ (Native BF16 loading).
+OS: Linux (Ubuntu 24.04+ recommended) or WSL2.
+Driver: nvidia_driver_580_open or higher (Supports CUDA 12.8+).
+📜 License & Ethics
+Research: This project is partially open-source for technical research and aesthetic experimentation only.
+Commercial Use: Allowed, provided that the source is prominently cited (link to this repository or mention SOUL ARCHITECT v2.0).
+Responsibility: Do not use this model to generate prohibited or illegal content.
+⚠️ Disclaimer
+This work is a "demo" developed over 15 days of intensive experimentation. Coding was assisted by Gemini and ChatGPT. My role involved architectural implementation path research and directional decision-making. Please handle with care. 🙏
+🛠️ Manual Installation (Alternative)
+If you choose not to use the pre-built Conda environment, ensure your local environment matches CUDA 12.8:
+accelerate==1.12.0
+aiofiles==24.1.0
+annotated-doc==0.0.4
+annotated-types==0.7.0
+anyio==4.12.1
+brotli==1.2.0
+certifi==2026.1.4
+charset-normalizer==3.4.4
+click==8.3.1
+cuda-bindings==12.9.4
+cuda-pathfinder==1.2.2
+Cython==3.2.4
+fastapi==0.128.0
+ffmpy==1.0.0
+filelock==3.20.3
+fsspec==2026.1.0
+gradio==6.3.0
+gradio_client==2.0.3
+groovy==0.1.2
+h11==0.16.0
+hf-xet==1.2.0
+httpcore==1.0.9
+httpx==0.28.1
+huggingface-hub==0.36.0
+idna==3.11
+Jinja2==3.1.6
+markdown-it-py==4.0.0
+MarkupSafe==3.0.2
+mdurl==0.1.2
+mpmath==1.3.0
+networkx==3.6.1
+numpy==2.4.1
+nvidia-cublas-cu12==12.8.4.1
+nvidia-cuda-cupti-cu12==12.8.90
+nvidia-cuda-nvrtc-cu12==12.8.93
+nvidia-cuda-runtime-cu12==12.8.90
+nvidia-cudnn-cu12==9.10.2.21
+nvidia-cufft-cu12==11.3.3.83
+nvidia-cufile-cu12==1.13.1.3
+nvidia-curand-cu12==10.3.9.90
+nvidia-cusolver-cu12==11.7.3.90
+nvidia-cusparse-cu12==12.5.8.93
+nvidia-cusparselt-cu12==0.7.1
+nvidia-nccl-cu12==2.28.9
+nvidia-nvjitlink-cu12==12.8.93
+nvidia-nvshmem-cu12==3.4.5
+nvidia-nvtx-cu12==12.8.90
+orjson==3.11.5
+packaging==25.0
+pandas==2.3.3
+peft==0.18.1
+pillow==12.1.0
+psutil==7.2.1
+pydantic==2.12.5
+pydantic_core==2.41.5
+pydub==0.25.1
+Pygments==2.19.2
+python-dateutil==2.9.0.post0
+python-multipart==0.0.21
+pytz==2025.2
+PyYAML==6.0.3
+regex==2026.1.15
+requests==2.32.5
+rich==14.2.0
+safehttpx==0.1.7
+safetensors==0.7.0
+semantic-version==2.10.0
+sentencepiece==0.2.1
+shellingham==1.5.4
+six==1.17.0
+starlette==0.50.0
+sympy==1.14.0
+tokenizers==0.22.2
+tomlkit==0.13.3
+torch==2.11.0.dev20260115+cu128
+torchaudio==2.11.0.dev20260115+cu128
+torchvision==0.25.0.dev20260115+cu128
+tqdm==4.67.1
+transformers==4.57.6
+triton==3.6.0+git9844da95
+typer==0.21.1
+typing-inspection==0.4.2
+typing_extensions==4.15.0
+tzdata==2025.3
+urllib3==2.6.3
+uvicorn==0.40.0
+
 > 微调核心：Architect_v2_PRO | 适配架构：NVIDIA Blackwell & Ada Lovelace
 
 简介（Gemini生成）
