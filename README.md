@@ -44,30 +44,30 @@
     - 一个过拟合并极度挑剔的疯子模型。
 
 ### 🕊️ Acknowledgments / 特别致敬
-# [SOURCE]: Alibaba_Qwen2.5-3B-Raw
-# [CREDIT]: Thanks to the Alibaba team for the powerful bilingual foundation.
+ [SOURCE]: Alibaba_Qwen2.5-3B-Raw
+ [CREDIT]: Thanks to the Alibaba team for the powerful bilingual foundation.
 
 ---
 
 ## 🚀 Deployment / 快速启动指南
 
 ### 1. Base_Model_Preparation
-# Action: Download original [Qwen2.5-3B-Raw](https://huggingface.co/Qwen/Qwen2.5-3B?hl=zh-CN) weights.
+ Action: Download original [Qwen2.5-3B-Raw](https://huggingface.co/Qwen/Qwen2.5-3B?hl=zh-CN) weights.
 
 ### 2. Environment_Config
-# Remote_Link: pan.baidu.com/s/1EsBXxka4bNeUmRn6RmCTkw (Code: 8888)
-# Package: arch20_runtime_env.tar.gz
-# MD5_Checksum: b8ae84b60ae7a5b1496efa27f46f67c4
+ Remote_Link: pan.baidu.com/s/1EsBXxka4bNeUmRn6RmCTkw (Code: 8888)
+ Package: arch20_runtime_env.tar.gz
+ MD5_Checksum: b8ae84b60ae7a5b1496efa27f46f67c4
 
 $md5sum arch20_runtime_env.tar.gz$ tar -xzvf arch20_runtime_env.tar.gz
 $ conda activate ./arch20_runtime
 
 ### 3. Execution_Flow
-# Edit app.py: MODEL_PATH = "/your/local/path/Qwen2.5-3B-Raw"
-# Edit app.py: CORE_PATH = "./models/binary_cores/architect_v2.core"
+ Edit app.py: MODEL_PATH = "/your/local/path/Qwen2.5-3B-Raw"
+ Edit app.py: CORE_PATH = "./models/binary_cores/architect_v2.core"
 
 $ python app.py
-# [NETWORK]: Access UI via http://0.0.0.0:8888
+ [NETWORK]: Access UI via http://0.0.0.0:8888
 
 ---
 
@@ -202,7 +202,7 @@ Blackwell 架构的算力红利 与在线大模型相比，本模型实现了完
 
 快速启动指南 (Deployment) 为了让大家能顺利启动，请遵循以下步骤：
 
-准备底座： 首先需要先下载 Qwen2.5-3B-Raw 的原版模型
+准备底座： 首先需要先下载 [Qwen2.5-3B-Raw](https://huggingface.co/Qwen/Qwen2.5-3B?hl=zh-CN) 的原版模型
 
 环境配置： 考虑到环境依赖（约8GB）较为复杂，我已将完整的 Conda 虚拟环境 打包上传至云盘。 虚拟环境网盘地址：https://pan.baidu.com/s/1EsBXxka4bNeUmRn6RmCTkw 提取码: 8888 下载后请对照该MD5校验码：b8ae84b60ae7a5b1496efa27f46f67c4 包体名称：arch20_runtime_env.tar.gz 请务必在 WSL2 或 Linux 环境内 使用命令 tar -xzvf arch20_runtime_env.tar.gz 进行解压
 
